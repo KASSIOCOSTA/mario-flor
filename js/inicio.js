@@ -73,3 +73,7 @@ function tempoDeNamoro(){
 }
 
 setInterval(tempoDeNamoro, 1000)
+
+function proxPagina(){
+    window.location.href = "../page/momentos.html"
+}

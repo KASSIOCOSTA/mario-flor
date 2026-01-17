@@ -67,7 +67,7 @@ body{
      appearance: none;
   -webkit-appearance: none;
 
-  
+
     margin-top: 5px;
     width: 70px;
     height: 70px;
@@ -85,6 +85,10 @@ body{
     font-size: 1.1em;
     color: brown;
     overflow: hidden;
+}
+#btn-play-pause:focus{
+    outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 /*css do album de musica */
 
@@ -138,7 +142,7 @@ body{
     
 }
 .tempo1 p {
-    background-color: rgb(128, 128, 128);
+    background-color: rgba(128, 128, 128, 0.471);
     padding: 20px;
     border-radius: 10px;
 
@@ -197,6 +201,7 @@ body{
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 100px;
 }
 .momentos button{
     position: absolute;
