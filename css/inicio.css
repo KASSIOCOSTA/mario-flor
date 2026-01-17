@@ -171,7 +171,7 @@ body{
 .mensagem{
     width: 85%;
     height: 250px;
-    background-color: rgb(255, 0, 0);
+    background-image: linear-gradient(to bottom, red, black);
     font-size: 1.7em;
     display: flex;
     flex-flow: row wrap;
