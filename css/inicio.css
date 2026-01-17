@@ -64,7 +64,10 @@ body{
 }
 .botoes button{
     -webkit-tap-highlight-color: transparent;
-    
+     appearance: none;
+  -webkit-appearance: none;
+
+  
     margin-top: 5px;
     width: 70px;
     height: 70px;
