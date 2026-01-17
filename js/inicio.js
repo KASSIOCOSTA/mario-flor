@@ -74,6 +74,9 @@ function tempoDeNamoro(){
 
 setInterval(tempoDeNamoro, 1000)
 
-function proxPagina(){
+function proxPaginaMomentos(){
     window.location.href = "../page/momentos.html"
+}
+function proxPaginaMensagem(){
+    window.location.href = "../page/mensagem.html"
 }

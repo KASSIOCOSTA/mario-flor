@@ -175,7 +175,6 @@ body{
     font-size: 1.7em;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
     align-items: center;
     text-align: center;
     text-decoration: none;
@@ -188,8 +187,13 @@ body{
     box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.405);
 
 }
-.mensagem span{
+.mensagem h2{
     font-size: 0.6em;
+    color: rgba(255, 255, 255, 0.551);
+}
+.mensagem button{
+    padding: 5px;
+    border-radius: 30px;
 }
 
 .momentos{
