@@ -163,7 +163,7 @@ body{
     width: 85%;
     height: 250px;
     background-color: rgb(255, 0, 0);
-    font-size: 2em;
+    font-size: 1.7em;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -176,6 +176,7 @@ body{
 
     padding: 10px;
     margin-bottom: 50px;
+    box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.405);
 
 }
 .mensagem span{
