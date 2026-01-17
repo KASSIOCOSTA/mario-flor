@@ -190,5 +190,5 @@ body{
     background-image: url(../img/momentos.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
