@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Flor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+              background-color: #f1dbcd;
+        }
+        header{
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background-color: #f1dbcd;
+            transition: opacity 2s ease;
+
+        }
+        header img{
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        .sumir{
+            pointer-events: none;
+            opacity: 0 ;
+        }
+        main{
+            position: relative;
+            transition: background-color 1.5s ease;
+            width: 100vw;
+            height: 100vh;
+            background-color: #f1dbcd; 
+            display: none;
+            color: black;
+        }
+        main a{
+            position: absolute;
+            color: white;
+            background-color: rgba(11, 44, 255, 0.85);
+            text-decoration: none;
+            padding: 10px 30px;
+            border: 1px solid rgba(0, 0, 0, 0.53);
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            box-sizing: border-box;
+            z-index: 99;
+        }
+        .saltar{
+            animation: saltar 3s linear infinite;
+
+        }
+        main h1{
+             font-family: "Ms Madi", cursive;
+            text-align: center;
+            font-size: 2em;
+            position: absolute;
+            top: 200px;
+            width: 70%;
+            left: 50%;
+            transform: translate(-50%,-50%)
+            
+        }
+        @keyframes saltar {
+            0%,100%{
+                font-size: 1em;
+            }
+            50%{
+                font-size: 1.1em;
+            }
+           
+           
+          
+        }
+
+
+     #corpo{
+                display: none;
+            }
+
+
+        .emoji{
+            position: absolute;
+            top: -50px;
+            font-size: 24px;
+            animation: cair linear forwards;
+            pointer-events: none;
+        }
+        @keyframes cair{
+            to{
+                transform: translateY(110vh);
+                opacity: 0.8;
+            }
+        }
+        .roda-pe{
+          background-image: linear-gradient(to right,#003324, #00513b,#003324 )  ;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            width: 100%;
+            z-index: 99;
+
+        }
+        .roda-pe img{
+            width: 100px;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        .roda-pe p{
+            color: white;
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <header id="sumir" >
+        <img src="img/logo-maria-flor.png" alt="Logo maria Flor">
+        
+
+    </header>
+    <main id="principal">
+        <div id="corpo">
+            <h1> Tenho uma mensagem para Você <br>  toque para abrir</h1>
+            <a href="page/inicio.html" target="_self"> <span class="saltar">💐 Abrir</span></a>
+        </div>
+        <div class="roda-pe">
+
+            <img src="img/logo-maria-flor.png" alt="img roda pe">
+            <p>📍| Turilândia-MA <br>
+            💐|Cestas|Floricultura (flores naturais)<br>
+            📲|98 983071338 (Das 8h às 18h)<br>
+            👇🏻| Catálogo Digital e WhatsApp</p>
+        </div>
+
+    </main>
+
+    <script>
+        const emojis = ["❤️", "✨", "🔥", "😍", "💖", "🌸", "🎉"];
+        function criarEmoji(){
+            const span = document.createElement('span')
+            span.classList.add('emoji')
+            span.textContent = emojis[Math.floor(Math.random()* emojis.length)]
+
+            span.style.left = Math.random() * 100+ "vw"
+            span.style.fontSize = (16 + Math.random()*24)+ "px"
+            span.style.animationDuration = (2+ Math.random()*3) + "s"
+
+            document.body.appendChild(span)
+
+            setTimeout(()=>{
+                span.remove()
+            },5000)
+            
+        }
+        setInterval(criarEmoji,150)
+
+
+       const sumir = document.querySelector('#sumir')
+       const principal = document.querySelector('#principal')
+       const corpo = document.querySelector('#corpo')
+        window.addEventListener('load',()=>{
+           setTimeout(()=>{
+             sumir.classList.add('sumir')
+             setTimeout(()=>{
+
+                sumir.style.display='none'
+                principal.style.display= 'block'
+                    setTimeout(()=>{
+                        principal.style.backgroundColor = '#f1dbcd'
+                            setTimeout(()=>{
+                                corpo.style.display='block'
+                            },1000)
+
+                    },1000)
+             },2000)
+           },1000)
+           
+        })
+
+        // função para sumir o fundo ^
+
+        
+    </script>
+    
+</body>
+</html>

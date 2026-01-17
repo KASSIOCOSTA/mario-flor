@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+</head>
+<body>
+    <audio src="../media/musica-do-album.mp3"  id="audio"></audio>
+
+
+
+    <div class="album-musica">
+        <div class="cabecalho">
+            <div></div>
+            <p>Eu te amo Mais que tudo</p>
+            <p style="font-size: 1.2em; font-weight: 1000;">. . . </p>
+        </div><!-- cabeçalho da musica-->
+
+
+
+        <div class="capa">
+
+        </div> <!-- foto da capa do album de musica, ajusta no css-->
+
+
+
+        <input type="range" id="barra" value="0" >
+         <div class="tempo">
+            <span id="atual">00:00</span>
+            <span id="duracao">00:00</span>
+            
+         </div> 
+
+         <div class="nome-musica">
+            <h2>CANTOR</h2>
+            <p>eu te amo</p>
+         </div>
+
+
+        <div class="botoes">
+            <!-- 23F8 pause -->
+           <button>&#x23CF;</button>
+           <button>&#x23EE;</button>
+           <button id="btn-play-pause"> &#x25B6;</button>
+           <button>&#x23ED;</button>
+           <button>&#x267E;&#xFE0F;</button>
+        </div> 
+    </div> 
+   
+
+
+    <div class="tempo-juntos">
+        <div class="foto-tempo-junto">
+
+        </div>
+
+        <div class="tempo-junto">
+            <div class="text">
+                <p>Te conhecir dia 22/05/2024  </p>
+            <p>Te Amo exatament ah:</p>
+            </div>
+
+            
+            <div class="tempo1">
+                <p>
+                    <span id="dias">00</span> <br>
+                    <span>DIAS</span>
+                </p>
+                <p>
+                    <span id="horas">00</span> <br>
+                    <span>HORAS</span>
+                </p>
+                
+            </div>
+            <div class="tempo1">
+                <p class="item">
+                    <span id="minutos">00</span> <br>
+                    <span   >MINUTOS</span>
+                </p>
+                
+                <p class="item">
+                    <span id="segundos">00</span> <br>
+                    <span >SEGUNDOS</span>
+                </p>
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+ <script src="../js/inicio.js"></script>
+    <!-- foto de fundo com a musica-->    
+</body>
+</html>

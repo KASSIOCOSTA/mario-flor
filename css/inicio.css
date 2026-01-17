@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    background-image: linear-gradient(to bottom, brown,black);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.album-musica{
+    margin: 10px;
+    
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    
+}
+.cabecalho div{
+    position: relative;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    padding: 10px;
+    transform: rotate(45deg);
+    top: -30%;
+    box-sizing: border-box;
+}
+.capa{
+    background-image: url(../img/foto-musica.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    width: 100%;
+    height: 320px;
+}
+
+.tempo{
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.nome-musica{
+    color: white;
+    letter-spacing: 0.2em;
+}
+.botoes{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.botoes button{
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.382);
+}
+#btn-play-pause{
+    border: black solid 2px;
+    background: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 1.1em;
+    color: brown;
+}
+/*css do album de musica */
+
+
+.tempo-juntos{
+    width: 80%;
+    height: 500px;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 5px 5px;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    
+
+}
+.foto-tempo-junto{
+    background-image: url('../img/foto-tempo.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 350px;
+
+
+}
+.text{
+   padding: 20px;
+}
+.tempo-junto{
+    
+     
+    width: 100%;
+    color: white;
+   
+
+
+}
+.tempo1{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgb(40, 40, 40);
+}
+.tempo1 p {
+    background-color: rgb(128, 128, 128);
+    padding: 20px;
+    border-radius: 10px;
+
+    width: 90px;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    margin-top: 30px;
+    width: 50%;    
+   
+}
