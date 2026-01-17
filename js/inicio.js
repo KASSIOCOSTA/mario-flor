@@ -64,10 +64,10 @@ function tempoDeNamoro(){
     const seg = Math.floor((calcularTempo%(1000*60))/(1000))
 
 
-    dias.innerHTML = dia
-    horas.innerHTML = hora
-    minutos.innerHTML = min
-    segundos.innerHTML = seg
+    dias.innerHTML = `${dia<10? '0'+dia : dia}`
+    horas.innerHTML = `${hora<10? '0'+hora : hora}`
+    minutos.innerHTML = `${min<10? '0'+min : min}`
+    segundos.innerHTML = `${seg<10? '0'+seg : seg}`
 
     
 }
