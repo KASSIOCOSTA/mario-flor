@@ -6,33 +6,48 @@
     <title>Maria Flor</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
         *{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
         body{
-              background-color: #f1dbcd;
+            background-color: #f1dbcd;
+            overflow-x: hidden;
         }
+
+        /* CAMADA DOS EMOJIS (NOVA) */
+        #emoji-layer{
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 999;
+        }
+
         header{
             position: relative;
             height: 100vh;
             width: 100vw;
             background-color: #f1dbcd;
             transition: opacity 2s ease;
-
         }
+
         header img{
             width: 300px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            
         }
+
         .sumir{
             pointer-events: none;
-            opacity: 0 ;
+            opacity: 0;
         }
+
         main{
             position: relative;
             transition: background-color 1.5s ease;
@@ -41,7 +56,9 @@
             background-color: #f1dbcd; 
             display: none;
             color: black;
+            overflow: hidden;
         }
+
         main a{
             position: absolute;
             color: white;
@@ -54,155 +71,136 @@
             left: 50%;
             transform: translate(-50%,-50%);
             box-shadow: 0 0 5px rgb(0, 0, 0);
-            box-sizing: border-box;
-            z-index: 99;
+            z-index: 999;
         }
+
         .saltar{
             animation: saltar 3s linear infinite;
-
         }
+
         main h1{
-             font-family: "Ms Madi", cursive;
+            font-family: "Ms Madi", cursive;
             text-align: center;
             font-size: 2em;
             position: absolute;
             top: 200px;
             width: 70%;
             left: 50%;
-            transform: translate(-50%,-50%)
-            
+            transform: translate(-50%,-50%);
         }
+
         @keyframes saltar {
-            0%,100%{
-                font-size: 1em;
-            }
-            50%{
-                font-size: 1.1em;
-            }
-           
-           
-          
+            0%,100%{ font-size: 1em; }
+            50%{ font-size: 1.1em; }
         }
 
+        #corpo{
+            display: none;
+        }
 
-     #corpo{
-                display: none;
-            }
-
-
+        /* EMOJIS */
         .emoji{
             position: absolute;
-            top: -50px;
-            font-size: 24px;
+            top: -40px;
             animation: cair linear forwards;
-            pointer-events: none;
+            will-change: transform;
         }
+
         @keyframes cair{
             to{
-                transform: translateY(110vh);
+                transform: translateY(100vh);
                 opacity: 0.8;
             }
         }
+
         .roda-pe{
-          background-image: linear-gradient(to right,#003324, #00513b,#003324 )  ;
+            background-image: linear-gradient(to right,#003324,#00513b,#003324);
             position: absolute;
             bottom: 0;
             display: flex;
-            flex-flow: row nowrap;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
-            padding-bottom: 10px;
-            padding-top: 5px;
+            padding: 5px 10px 10px;
             width: 100%;
-            z-index: 99;
-
+            z-index: 999;
         }
+
         .roda-pe img{
             width: 100px;
-            flex-grow: 1;
-            flex-shrink: 1;
         }
+
         .roda-pe p{
             color: white;
-            flex-grow: 1;
-            flex-shrink: 1;
-
-            
         }
-        
     </style>
-
 </head>
-<body>
-    <header id="sumir" >
-        <img src="img/logo-maria-flor.png" alt="Logo maria Flor">
-        
 
+<body>
+
+    <!-- CAMADA DOS EMOJIS -->
+    <div id="emoji-layer"></div>
+
+    <header id="sumir">
+        <img src="img/logo-maria-flor.png" alt="Logo maria Flor">
     </header>
+
     <main id="principal">
         <div id="corpo">
-            <h1> Tenho uma mensagem para Você <br>  toque para abrir</h1>
-            <a href="page/inicio.html" target="_self"> <span class="saltar">💐 Abrir</span></a>
+            <h1>Tenho uma mensagem para Você <br> toque para abrir</h1>
+            <a href="page/inicio.html"><span class="saltar">💐 Abrir</span></a>
         </div>
+
         <div class="roda-pe">
-
             <img src="img/logo-maria-flor.png" alt="img roda pe">
-            <p>📍| Turilândia-MA <br>
-            💐|Cestas|Floricultura (flores naturais)<br>
-            📲|98 983071338 (Das 8h às 18h)<br>
-            👇🏻| Catálogo Digital e WhatsApp</p>
+            <p>
+                📍 Turilândia-MA<br>
+                💐 Cestas | Floricultura (flores naturais)<br>
+                📲 98 983071338 (Das 8h às 18h)<br>
+                👇🏻 Catálogo Digital e WhatsApp
+            </p>
         </div>
-
     </main>
 
     <script>
         const emojis = ["❤️", "✨", "🔥", "😍", "💖", "🌸", "🎉"];
+        const layer = document.getElementById('emoji-layer');
+
         function criarEmoji(){
-            const span = document.createElement('span')
-            span.classList.add('emoji')
-            span.textContent = emojis[Math.floor(Math.random()* emojis.length)]
+            const span = document.createElement('span');
+            span.className = 'emoji';
+            span.textContent = emojis[Math.floor(Math.random()*emojis.length)];
 
-            span.style.left = Math.random() * 100+ "vw"
-            span.style.fontSize = (16 + Math.random()*24)+ "px"
-            span.style.animationDuration = (2+ Math.random()*3) + "s"
+            const size = 16 + Math.random()*24;
+            span.style.fontSize = size + "px";
 
-            document.body.appendChild(span)
+            span.style.left = Math.random() * (window.innerWidth - size) + "px";
+            span.style.animationDuration = (2 + Math.random()*3) + "s";
 
-            setTimeout(()=>{
-                span.remove()
-            },5000)
-            
+            layer.appendChild(span);
+
+            span.addEventListener('animationend', () => span.remove());
         }
-        setInterval(criarEmoji,150)
 
+        setInterval(criarEmoji,150);
 
-       const sumir = document.querySelector('#sumir')
-       const principal = document.querySelector('#principal')
-       const corpo = document.querySelector('#corpo')
+        const sumir = document.querySelector('#sumir');
+        const principal = document.querySelector('#principal');
+        const corpo = document.querySelector('#corpo');
+
         window.addEventListener('load',()=>{
-           setTimeout(()=>{
-             sumir.classList.add('sumir')
-             setTimeout(()=>{
-
-                sumir.style.display='none'
-                principal.style.display= 'block'
+            setTimeout(()=>{
+                sumir.classList.add('sumir');
+                setTimeout(()=>{
+                    sumir.style.display='none';
+                    principal.style.display='block';
                     setTimeout(()=>{
-                        principal.style.backgroundColor = '#f1dbcd'
-                            setTimeout(()=>{
-                                corpo.style.display='block'
-                            },1000)
-
-                    },1000)
-             },2000)
-           },1000)
-           
-        })
-
-        // função para sumir o fundo ^
-
-        
+                        corpo.style.display='block';
+                    },1000);
+                },2000);
+            },1000);
+        });
     </script>
-    
+
 </body>
 </html>
