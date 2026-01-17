@@ -7,7 +7,7 @@ const duracao = document.querySelector('#duracao');
 btn_Play_Pause.addEventListener('click', ()=>{
     if(audio.paused ===true){
         audio.play()
-        btn_Play_Pause.innerHTML = '&#X23F8;'
+        btn_Play_Pause.innerHTML = '||'
     }
     else{
         audio.pause()

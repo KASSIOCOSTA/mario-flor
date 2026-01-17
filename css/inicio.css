@@ -15,6 +15,7 @@ body{
 }
 .album-musica{
     margin: 10px;
+    margin-bottom: 60px;
     
     width: 80%;
     height: 500px;
@@ -63,7 +64,9 @@ body{
 }
 .botoes button{
     margin-top: 5px;
-    padding: 15px;
+    width: 70px;
+
+    height: 70px;
     border-radius: 50%;
     font-size: 1em;
     background: none;
